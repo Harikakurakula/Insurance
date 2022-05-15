@@ -1,0 +1,27 @@
+<p>viewrequests works!</p>
+
+<p>viewproduct works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th> ApplicationId</th>
+            <th>Emailid</th>                          
+            <th>RequestDate</th> 
+            <th>Appstatus</th>                              
+           <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let  InsuranceApplication of InsuranceStatus">
+            <td>{{ InsuranceApplication.applicationId}}</td>
+            <td>{{ InsuranceApplication.emailid}}</td>
+            <td>{{ InsuranceApplication.requestDate}}</td>
+            <td>{{ InsuranceApplication.appstatus}}</td>
+            <td>
+                <button [routerLink]="['/requestdetails/', InsuranceApplication.applicationId]">View Details</button>
+                
+            </td>
+        </tr>
+    </tbody>
+</table>

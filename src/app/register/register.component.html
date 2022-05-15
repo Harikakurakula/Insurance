@@ -1,0 +1,100 @@
+<p>register works!</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="register.component.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div><br>
+    <div class="content">
+      <form [formGroup]="contactForm" (ngSubmit)="Onsubmit()" novalidate>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" placeholder="Enter your First Name" formControlName="firstname">
+          </div>
+          
+    <div
+    *ngIf="!firstname?.valid && (firstname?.dirty ||firstname?.touched)">
+    <div [hidden]="!firstname?.errors?.['required']">
+      First Name is required
+    </div>
+    <div [hidden]="!firstname?.errors?.['minlength']">
+      Min Length is 5
+    </div>
+  </div>
+          <br><br>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" placeholder="Enter your Last Name" formControlName="lastname" >
+          </div>
+          <div
+          *ngIf="!lastname?.valid && (lastname?.dirty ||lastname?.touched)">
+          <div [hidden]="!lastname?.errors?.['required']"><br>
+            Last Name is required
+          </div>
+          <div [hidden]="!lastname?.errors?.['minlength']">
+            Min Length is 10
+          </div>
+        </div>
+          <br><br>
+          <div class="input-box">
+            <span class="details">Date Of Birth</span>
+            <input type="date" placeholder="Enter your Age" formControlName="Age">
+          </div>
+          <br><br>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" placeholder="Enter your Address Here" formControlName="Address" >
+          </div>
+          <br><br>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" formControlName="Emailid">
+          </div>
+          <div *ngIf="!Emailid?.valid && (Emailid?.dirty ||Emailid?.touched)">
+            <div [hidden]="!Emailid?.errors?.['required']">
+              email is required
+            </div>
+            <div [hidden]="!Emailid?.errors?.['Emailid']">
+              invalid email id
+            </div>
+          </div>
+          <br><br>
+          <div class="input-box">
+            <span class="details">Mobile Number</span>
+            <input type="text" placeholder="Enter your number" formControlName="Mobilenumber">
+          </div>
+          <div *ngIf="!Mobilenumber?.valid && (Mobilenumber?.dirty ||Mobilenumber?.touched)">
+            <div [hidden]="!Mobilenumber?.errors?.['required']">
+              Mobilenumber is required
+            </div>
+            <div [hidden]="!Mobilenumber?.errors?.['minlength']">
+              Min length is 10
+            </div>
+          </div>
+          <br><br>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your password" formControlName="Password">
+          </div>
+          <div
+          *ngIf="!Password?.valid && (Password?.dirty ||Password?.touched)">
+          <div [hidden]="!Password?.errors?.['required']">
+            Password is required
+          </div>
+        </div>
+          <br><br>
+            </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

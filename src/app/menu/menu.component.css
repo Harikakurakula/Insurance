@@ -1,0 +1,20 @@
+ul{
+    float:right;
+    list-style-type: none;
+    margin-top: 25px;
+    font-size: large;
+}
+ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color:rgb(251, 247, 247);
+    padding: 5px 20px; 
+    font-size: large;
+    transition:0.6s ease;  
+}
+ul li a:hover{
+    background-color: #fff;
+    color:#000;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<title>Buy-Insurance</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+
+<div id="id03" class="w3-container">
+  <h2>Buy-Insurance</h2><br>
+  <div class="dropdown">
+    <h4>Choose Insurance</h4>
+    
+<form>
+<select name = "dropdown">
+<option value = "4wheeler" selected>4 Wheeler Insurance</option>
+<option value = "2wheeler"[selected]="">2 Wheeler Insurance</option>
+</select>
+</form>
+  </div><br><br>
+
+  <div class="dropdown">
+    <h4>Choose Plans</h4>
+<form>
+<select name = "dropdown">
+<option value = "Third Party Liability" selected>Third Party Liability</option>
+<option value = "Comprehensive"[selected]="">Comprehensive</option>
+</select>
+</form>
+  </div><br><br>
+
+  <div class="dropdown">
+    <h4>Duration</h4>
+<form>
+<select name = "dropdown">
+<option value = "1"[selected]>One Year</option>
+<option value = "2"[selected]="">Two Year</option>
+<option value = "3"[selected]="">Three Year</option>
+</select>
+</form>
+  </div><br><br>
+  
+  
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Continue</button>
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span><br><br>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+
+
+            <p>
+                <label for="Emailid">Email id </label>
+                <input type="text" id="Emailid" name="Emailid" formControlName="Emailid">
+              </p><br>
+             
+              <div
+                *ngIf="!Emailid?.valid && (Emailid?.dirty ||Emailid?.touched)">
+                <div [hidden]="!Emailid?.errors?.['required']">
+                    Emailid required
+                </div><br>
+          
+              </div>
+ 
+            <p>
+              <label for="VehicleManufacturer">Car/bike Manufacturer </label>
+              <input type="text" id="VehicleManufacturer" name="VehicleManufacturer" formControlName="VehicleManufacturer">
+            </p><br>
+           
+            <div
+              *ngIf="!VehicleManufacturer?.valid && (VehicleManufacturer?.dirty ||VehicleManufacturer?.touched)">
+              <div [hidden]="!VehicleManufacturer?.errors?.['required']">
+                Car/bike Manufacturer required
+              </div><br>
+        
+            </div>
+        
+        
+            <p>
+                <label for="Vehiclemodel">Car/bike Model </label>
+                <input type="text" id="Vehiclemodel" name="Vehiclemodel" formControlName="Vehiclemodel">
+              </p><br>
+             
+              <div
+                *ngIf="!Vehiclemodel?.valid && (Vehiclemodel?.dirty ||Vehiclemodel?.touched)">
+                <div [hidden]="!Vehiclemodel?.errors?.['required']">
+                Car/bike Model required
+                </div><br>
+              </div>
+        
+              <p>
+                <label for="DrivingLicense">Driving License </label>
+                <input type="text" id="DrivingLicense" name="DrivingLicense" formControlName="DrivingLicense">
+              </p><br>
+             
+              <div
+                *ngIf="!DrivingLicense?.valid && (DrivingLicense?.dirty ||DrivingLicense?.touched)">
+                <div [hidden]="!DrivingLicense?.errors?.['required']">
+                 Driving License required
+                </div><br>
+              </div>
+           
+            <p>
+              <label for="PurchaseDate">Purchase Date </label>
+              <input type="date" id="" name="PurchaseDate" formControlName="PurchaseDate">
+            </p><br>
+        
+            <p>
+                <label for="RegistrationNumber">Registration Number </label>
+                <input type="text" id="RegistrationNumber" name="RegistrationNumber" formControlName="RegistrationNumber">
+              </p><br>
+             
+              <div
+                *ngIf="!RegistrationNumber?.valid && (RegistrationNumber?.dirty ||RegistrationNumber?.touched)">
+                <div [hidden]="!RegistrationNumber?.errors?.['required']">
+                 Registration Number required
+                </div><br>
+              </div>
+
+              
+              <p>
+                <label for="EngineNumber">Engine Number </label>
+                <input type="text" id="EngineNumber" name="EngineNumber" formControlName="EngineNumber">
+              </p><br>
+             
+              <div
+                *ngIf="!EngineNumber?.valid && (EngineNumber?.dirty ||EngineNumber?.touched)">
+                <div [hidden]="!EngineNumber?.errors?.['required']">
+                Engine Number is required
+              </div><br>
+              </div>
+        
+              <p>
+                <label for="chassisNumber">Chasis Number </label>
+                <input type="text" id="chassisNumber" name="chassisNumber" formControlName="chassisNumber">
+              </p><br>
+             
+              <div
+                *ngIf="!chassisNumber?.valid && (chassisNumber?.dirty ||chassisNumber?.touched)">
+                <div [hidden]="!chassisNumber?.errors?.['required']">
+                Chasis Number  is required
+                </div><br>
+
+              </div>
+
+              <p>
+                <label for="vehicleprice">Vehicle Price </label>
+                <input type="number" id="vehicleprice" name="vehicleprice" formControlName="vehicleprice">
+              </p><br>
+
+
+              <div
+              *ngIf="!vehicleprice?.valid && (vehicleprice?.dirty ||vehicleprice?.touched)">
+              <div [hidden]="!vehicleprice?.errors?.['required']">
+                Vehicle Price is required
+              </div><br>
+
+              </div>
+
+              
+        </form>
+        
+      </div>
+    </div>
+    <div class="button">
+        <button type="submit" [disabled]="contactForm.valid" onclick="document.getElementById('id02').style.display='block';document.getElementById('id01').style.display='none';document.getElementById('id03').style.display='none'">Make Payment</button>
+        </div>
+  </div>
+</div>
+<div id="id02" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span><br><br>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+
+            <p>
+              <label for="card">Card Holder Name</label>
+              <input type="text" id="card" name="card" formControlName="card">
+            </p><br>
+           
+            <div
+              *ngIf="!card?.valid && (card?.dirty ||card?.touched)">
+              <div [hidden]="!card?.errors?.['required']">
+                  Card Name is required
+              </div><br>
+        
+            </div>
+
+            
+          
+             <p>
+                <label for="cardnumber">Card Number </label>
+                <input type="number" id="cardnumber" name="cardnumber" formControlName="cardnumber">
+              </p><br>
+             
+              <div
+                *ngIf="!cardnumber?.valid && (cardnumber?.dirty||cardnumber?.touched)">
+                <div [hidden]="!cardnumber?.errors?.['required']">
+                  Card Number is required
+                </div><br>
+
+                <div [hidden]="!cardnumber?.errors?.['minlength']">
+                  Min Length is 16
+                </div>
+              </div>
+         
+              <p>
+                <label for="expiry">Expiry</label>
+                <input type="date" id="expiry" name="expiry" formControlName="expiry">
+              </p><br>
+             
+              <div
+                *ngIf="!expiry?.valid && (expiry?.dirty ||expiry?.touched)">
+                <div [hidden]="!expiry?.errors?.['required']">
+                    expiry is required
+                </div><br>
+          
+              </div>
+  
+              
+
+            <p>
+              <label for="cvv">Cvv number</label>
+              <input type="number" id="cvv" name="cvv" formControlName="cvv">
+            </p><br>
+           
+            <div
+              *ngIf="!cvv?.valid && (cvv?.dirty ||cvv?.touched)">
+              <div [hidden]="!cvv?.errors?.['required']">
+               Cvv is required
+              </div><br>
+              <div [hidden]="!cvv?.errors?.['minlength']">
+                Min Length is 3
+              </div>
+            </div>
+
+            <button     onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Submit</button>
+          </form>
+      
+      
+    </div>
+  </div>
+</div>
+</body>
+</html>
